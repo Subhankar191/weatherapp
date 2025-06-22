@@ -1,0 +1,19 @@
+# Automatically normalize line endings across OS
+* text=auto
+
+# Ensure consistent text handling for JS/TS/CSS/HTML/MD
+*.js   text
+*.ts   text
+*.jsx  text
+*.tsx  text
+*.css  text
+*.scss text
+*.html text
+*.json text
+*.md   text
+*.yml  text
+*.yaml text
+
+# Treat lock files as binary to prevent auto-merge conflicts
+package-lock.json binary
+backend/package-lock.json binary
