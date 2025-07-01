@@ -1,70 +1,175 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🌦️ WeatherSphere
 
-## Available Scripts
+**WeatherSphere** is a sleek, full-featured weather forecast web application that delivers **real-time weather updates**, **5-day forecasts**, **air quality data**, and a modern **dark/light mode UI toggle** — all through a beautifully responsive interface.
 
-In the project directory, you can run:
+Built with **React.js** on the frontend and **Node.js + Express.js** on the backend, it integrates the powerful **OpenWeatherMap API** to bring weather intelligence right to your screen.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🌐 Live Preview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+> ⚠️ This app is designed for **local fullstack deployment** (React + Node.js).
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📸 Screenshots
 
-### `npm run build`
+<p align="center">
+  <img src="./screenshots/Screenshot_24.png" width="700" alt="WeatherSphere - Dark Mode"/>
+  <br/><br/>
+  <img src="./screenshots/Screenshot_25.png" width="700" alt="Forecast Dashboard"/>
+</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠 Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Frontend           | Backend              | APIs Used               |
+|--------------------|----------------------|--------------------------|
+| React.js           | Node.js + Express.js | OpenWeatherMap API       |
+| CSS (Custom)       | Axios                | Geo, Weather, Air Quality |
+| Leaflet.js         | dotenv               |                          |
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ✨ Features
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 🔍 **City Weather Search** – Get real-time weather updates for any global city.
+- 📋 **Recent Searches** – View and clear recently searched cities.
+- 🌡️ **Live Weather Data** – Shows temperature, feels like, rain probability, sunrise/sunset time, and city name.
+- 📊 **Weather Details Analytics** – Includes sunrise/sunset, humidity, wind speed & direction, pressure, visibility, and air quality index.
+- 🕒 **24-Hour Forecast** – Hourly breakdown with temperature, weather icons, and rain chances.
+- 📅 **5-Day Forecast** – Daily summaries with temperature trends and weather conditions.
+- ❤️ **Favorites List** – Save and quickly access frequently searched cities.
+- 🌐 **Location Mapping** – Interactive map view for the selected city.
+- 🌓 **Dark / Light Mode Toggle** – Switch themes for day or night viewing.
+- ⚙️ **Unit Toggle** – Convert between **°C/°F** and **m/s or mph**.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📁 Folder Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+weather-forecast-app/
+├── backend/ # Express backend
+│ ├── server.js # Entry point
+│ ├── .env # API key (not tracked)
+│ ├── package.json
+├── public/ # Static public assets
+├── src/ # React frontend
+│ ├── api/ # API request logic
+│ ├── assets/ # Images, icons, etc.
+│ ├── components/ # Reusable UI components
+│ ├── contexts/ # React context providers (e.g., theme, favorites)
+│ ├── hooks/ # Custom React hooks
+│ ├── pages/ # App pages (e.g., Home, Settings)
+│ ├── services/ # Utility services (e.g., weather API abstraction)
+│ ├── utils/ # Helper functions
+│ ├── App.js
+│ ├── App.css
+│ ├── index.js # App entry point
+│ ├── index.css
+│ ├── reportWebVitals.js
+│ ├── setupTests.js
+├── .gitignore
+├── package.json
+├── README.md
 
-## Learn More
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🚀 Local Setup Guide
 
-### Code Splitting
+> ⚙️ This serves **frontend and backend** from a single server using Express.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 1. Clone the Repository
 
-### Analyzing the Bundle Size
+```bash
+git clone https://github.com/Subhankar191/weather-forecast-app.git
+cd weather-forecast-app
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 2. Build React Frontend
 
-### Making a Progressive Web App
+```bash
+npm install
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Copy the production build to backend:
 
-### Advanced Configuration
+```bash
+cp -r build backend/
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 3. Setup Backend
 
-### Deployment
+```bash
+cd backend
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Create a `.env` file in `/backend`:
 
-### `npm run build` fails to minify
+```env
+OPENWEATHER_API_KEY=your_openweathermap_api_key
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 4. Run the Fullstack Server
+
+```bash
+node server.js
+```
+
+Then visit: **http://localhost:5000**
+
+---
+
+## 🔗 Backend API Endpoints
+
+| Method | Endpoint         | Description                  |
+|--------|------------------|------------------------------|
+| GET    | `/api/current`   | Current weather by location  |
+| GET    | `/api/forecast`  | 5-day forecast               |
+| GET    | `/api/hourly`    | Filtered hourly forecast     |
+| GET    | `/api/air`       | Air Quality Index            |
+
+---
+
+## 🧠 What You'll Learn
+
+- Fullstack integration of React and Node.js
+- Consuming third-party REST APIs (OpenWeatherMap)
+- Secure API key management using `.env`
+- Responsive design and conditionally rendered components
+- Serving production React build via Express
+- Building dark/light UI themes
+
+---
+
+## 🔥 Bonus Feature: Dark / Light Mode
+
+WeatherSphere offers a **modern dark mode toggle** with stateful theme switching. Users can enjoy the app in the mode they prefer, whether day or night.
+
+---
+
+## 📝 To-Do
+
+- ✅ Add geolocation support
+- ✅ Dark/Light Mode toggle
+- ⬜ Persistent favorites
+- ⬜ Internationalization (i18n)
+- ⬜ Offline support / caching
+
+---
+
+## 🛡️ License
+
+This project is licensed under the **MIT License**.  
+Feel free to fork, use, or extend it for your own projects.
+
+---
+
+> 💙 Crafted with care by **Subhankar Das**  
+> Inspired by the skies, built with JavaScript.
