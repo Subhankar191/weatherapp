@@ -56,6 +56,7 @@ weather-forecast-app/
 │ ├── .env # API key (not tracked)
 │ ├── package.json
 ├── public/ # Static public assets
+├── screenshots/ # Screenshots of web pages
 ├── src/ # React frontend
 │ ├── api/ # API request logic
 │ ├── assets/ # Images, icons, etc.
