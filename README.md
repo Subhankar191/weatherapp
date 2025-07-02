@@ -51,6 +51,7 @@ Built with **React.js** on the frontend and **Node.js + Express.js** on the back
 ---
 
 ## 📁 Folder Structure
+```
 
 weather-forecast-app/
 ├── backend/
