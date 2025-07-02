@@ -13,14 +13,16 @@ Built with **React.js** on the frontend and **Node.js + Express.js** on the back
 
 ---
 
-## 📸 Screenshots
+## 🖼️ Screenshots
 
-<p align="center">
-  <img src="./screenshots/Screenshot_24.png" width="700" alt="WeatherSphere - Dark Mode"/>
-  <br/><br/>
-  <img src="./screenshots/Screenshot_25.png" width="700" alt="Forecast Dashboard"/>
-</p>
+### 🏠 Home Page
+![Home](./screenshots/Screenshot_1.png)
 
+### 📋 Home Page
+![Home](./screenshots/Screenshot_2.png)
+
+### 📊 Favourite Page
+![Favourite](./screenshots/Screenshot_3.png)
 ---
 
 ## 🛠 Tech Stack
