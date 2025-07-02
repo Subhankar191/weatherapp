@@ -53,30 +53,33 @@ Built with **React.js** on the frontend and **Node.js + Express.js** on the back
 ## 📁 Folder Structure
 
 weather-forecast-app/
-├── backend/ # Express backend
-│ ├── server.js # Entry point
-│ ├── .env # API key (not tracked)
-│ ├── package.json
-├── public/ # Static public assets
-├── screenshots/ # Screenshots of web pages
-├── src/ # React frontend
-│ ├── api/ # API request logic
-│ ├── assets/ # Images, icons, etc.
-│ ├── components/ # Reusable UI components
-│ ├── contexts/ # React context providers (e.g., theme, favorites)
-│ ├── hooks/ # Custom React hooks
-│ ├── pages/ # App pages (e.g., Home, Settings)
-│ ├── services/ # Utility services (e.g., weather API abstraction)
-│ ├── utils/ # Helper functions
-│ ├── App.js
-│ ├── App.css
-│ ├── index.js # App entry point
-│ ├── index.css
-│ ├── reportWebVitals.js
-│ ├── setupTests.js
+├── backend/
+│   ├── server.js              – Express backend entry point
+│   ├── .env                   – API key (not tracked in Git)
+│   ├── package.json
+│   └── package-lock.json
+├── public/                    – Static public assets
+├── screenshots/              – App screenshots for README
+├── src/
+│   ├── api/                   – API request logic
+│   ├── assets/                – Images, icons, etc.
+│   ├── components/            – Reusable UI components
+│   ├── contexts/              – React context providers (e.g., theme, favorites)
+│   ├── hooks/                 – Custom React hooks
+│   ├── pages/                 – Main app pages (e.g., Home, Settings)
+│   ├── services/              – Weather API abstractions
+│   ├── utils/                 – Helper functions
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js               – React entry point
+│   ├── index.css
+│   ├── reportWebVitals.js
+│   └── setupTests.js
 ├── .gitignore
 ├── package.json
-├── README.md
+├── package-lock.json
+└── README.md
+
 
 ---
 
