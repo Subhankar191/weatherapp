@@ -1,4 +1,3 @@
-
 # 🌦️ WeatherSphere
 
 **WeatherSphere** is a sleek, full-featured weather forecast web application that delivers **real-time weather updates**, **5-day forecasts**, **air quality data**, and a modern **dark/light mode UI toggle** — all through a beautifully responsive interface.
@@ -23,15 +22,6 @@ Built with **React.js** on the frontend and **Node.js + Express.js** on the back
 
 ### 📊 Favourite Page
 ![Favourite](./screenshots/Screenshot_3.png)
----
-
-## 🛠 Tech Stack
-
-| Frontend           | Backend              | APIs Used               |
-|--------------------|----------------------|--------------------------|
-| React.js           | Node.js + Express.js | OpenWeatherMap API       |
-| CSS (Custom)       | Axios                | Geo, Weather, Air Quality |
-| Leaflet.js         | dotenv               |                          |
 
 ---
 
@@ -47,11 +37,21 @@ Built with **React.js** on the frontend and **Node.js + Express.js** on the back
 - 🌐 **Location Mapping** – Interactive map view for the selected city.
 - 🌓 **Dark / Light Mode Toggle** – Switch themes for day or night viewing.
 - ⚙️ **Unit Toggle** – Convert between **°C/°F** and **m/s or mph**.
+  
+---
+
+## 🛠 Tech Stack
+
+| Frontend           | Backend              | APIs Used               |
+|--------------------|----------------------|--------------------------|
+| React.js           | Node.js + Express.js | OpenWeatherMap API       |
+| CSS (Custom)       | Axios                | Geo, Weather, Air Quality |
+| Leaflet.js         | dotenv               |                          |
+
 ---
 
 ## 📁 Folder Structure
 
-```
 weather-forecast-app/
 ├── backend/ # Express backend
 │ ├── server.js # Entry point
@@ -78,11 +78,9 @@ weather-forecast-app/
 ├── package.json
 ├── README.md
 
-```
-
 ---
 
-## 🚀 Local Setup Guide
+## 🚀 Local Setup
 
 > ⚙️ This serves **frontend and backend** from a single server using Express.
 
