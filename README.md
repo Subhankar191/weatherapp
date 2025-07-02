@@ -80,7 +80,7 @@ weather-forecast-app/
 ├── package-lock.json
 └── README.md
 
-
+```
 ---
 
 ## 🚀 Local Setup
