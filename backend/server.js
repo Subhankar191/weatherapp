@@ -4,15 +4,34 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const apiKey = process.env.OPENWEATHER_API_KEY;
 
 if (!apiKey) {
-  console.error("❌ OPENWEATHER_API_KEY is not set in .env");
-  process.exit(1);
+  console.error("❌ OPENWEATHER_API_KEY is not set in environment variables");
+  // Don't exit in production, Render will show error in logs
 }
 
-app.use(cors());
+// Configure CORS for production
+const allowedOrigins = [
+  'http://localhost:3000',
+  process.env.FRONTEND_URL,
+  'https://weather-app-frontend.onrender.com' // Update after deployment
+].filter(Boolean); // Remove undefined values
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      console.log('Blocked origin:', origin);
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
+  credentials: true
+}));
 
 // Helper to resolve city name to lat/lon
 async function resolveLocation(params) {
@@ -33,6 +52,20 @@ async function resolveLocation(params) {
 
   return { lat: params.lat, lon: params.lon };
 }
+
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Weather API Backend',
+    status: 'running',
+    endpoints: [
+      '/api/current?q=London',
+      '/api/forecast?q=London',
+      '/api/hourly?q=London',
+      '/api/air?q=London'
+    ]
+  });
+});
 
 // Current weather
 app.get('/api/current', async (req, res) => {
@@ -67,10 +100,9 @@ app.get('/api/hourly', async (req, res) => {
     const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=${req.query.units || 'metric'}&appid=${apiKey}`;
     const response = await axios.get(url);
 
-    const now = Math.floor(Date.now() / 1000);         // current timestamp in seconds
-    const next24h = now + 24 * 60 * 60;                // timestamp for 24 hours from now
+    const now = Math.floor(Date.now() / 1000);
+    const next24h = now + 24 * 60 * 60;
 
-    // Filter data points within the next 24 hours
     const filtered = response.data.list.filter(item => item.dt >= now && item.dt <= next24h);
     res.json({ list: filtered });
   } catch (error) {
@@ -92,6 +124,15 @@ app.get('/api/air', async (req, res) => {
   }
 });
 
+// Health check endpoint for Render
+app.get('/health', (req, res) => {
+  res.status(200).json({ 
+    status: 'healthy',
+    timestamp: new Date().toISOString()
+  });
+});
+
 app.listen(PORT, () => {
-  console.log(`✅ Server running at http://localhost:${PORT}`);
+  console.log(`✅ Weather backend running on port ${PORT}`);
+  console.log(`🌐 OpenWeather API Key: ${apiKey ? 'Set' : 'Not Set'}`);
 });

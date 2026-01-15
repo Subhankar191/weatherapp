@@ -48,3 +48,5 @@ backend/.DS_Store
 # Optional for GitHub Codespaces or cloud dev
 # ========================
 .devcontainer/
+
+.vercel
