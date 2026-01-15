@@ -1,4 +1,3 @@
-
 # 🌦️ WeatherSphere
 
 **WeatherSphere** is a sleek, full-featured weather forecast web application that delivers **real-time weather updates**, **5-day forecasts**, **air quality data**, and a modern **dark/light mode UI toggle** — all through a beautifully responsive interface.
@@ -13,23 +12,16 @@ Built with **React.js** on the frontend and **Node.js + Express.js** on the back
 
 ---
 
-## 📸 Screenshots
+## 🖼️ Screenshots
 
-<p align="center">
-  <img src="./screenshots/Screenshot_24.png" width="700" alt="WeatherSphere - Dark Mode"/>
-  <br/><br/>
-  <img src="./screenshots/Screenshot_25.png" width="700" alt="Forecast Dashboard"/>
-</p>
+### 🏠 Home Page
+![Home](./screenshots/Screenshot_1.png)
 
----
+### 📋 Home Page
+![Home](./screenshots/Screenshot_2.png)
 
-## 🛠 Tech Stack
-
-| Frontend           | Backend              | APIs Used               |
-|--------------------|----------------------|--------------------------|
-| React.js           | Node.js + Express.js | OpenWeatherMap API       |
-| CSS (Custom)       | Axios                | Geo, Weather, Air Quality |
-| Leaflet.js         | dotenv               |                          |
+### 📊 Favourite Page
+![Favourite](./screenshots/Screenshot_3.png)
 
 ---
 
@@ -45,42 +37,54 @@ Built with **React.js** on the frontend and **Node.js + Express.js** on the back
 - 🌐 **Location Mapping** – Interactive map view for the selected city.
 - 🌓 **Dark / Light Mode Toggle** – Switch themes for day or night viewing.
 - ⚙️ **Unit Toggle** – Convert between **°C/°F** and **m/s or mph**.
+  
+---
+
+## 🛠 Tech Stack
+
+| Frontend           | Backend              | APIs Used               |
+|--------------------|----------------------|--------------------------|
+| React.js           | Node.js + Express.js | OpenWeatherMap API       |
+| CSS (Custom)       | Axios                | Geo, Weather, Air Quality |
+| Leaflet.js         | dotenv               |                          |
+
 ---
 
 ## 📁 Folder Structure
-
 ```
+
 weather-forecast-app/
-├── backend/ # Express backend
-│ ├── server.js # Entry point
-│ ├── .env # API key (not tracked)
-│ ├── package.json
-├── public/ # Static public assets
-├── screenshots/ # Screenshots of web pages
-├── src/ # React frontend
-│ ├── api/ # API request logic
-│ ├── assets/ # Images, icons, etc.
-│ ├── components/ # Reusable UI components
-│ ├── contexts/ # React context providers (e.g., theme, favorites)
-│ ├── hooks/ # Custom React hooks
-│ ├── pages/ # App pages (e.g., Home, Settings)
-│ ├── services/ # Utility services (e.g., weather API abstraction)
-│ ├── utils/ # Helper functions
-│ ├── App.js
-│ ├── App.css
-│ ├── index.js # App entry point
-│ ├── index.css
-│ ├── reportWebVitals.js
-│ ├── setupTests.js
+├── backend/
+│   ├── server.js              – Express backend entry point
+│   ├── .env                   – API key (not tracked in Git)
+│   ├── package.json
+│   └── package-lock.json
+├── public/                    – Static public assets
+├── screenshots/              – App screenshots for README
+├── src/
+│   ├── api/                   – API request logic
+│   ├── assets/                – Images, icons, etc.
+│   ├── components/            – Reusable UI components
+│   ├── contexts/              – React context providers (e.g., theme, favorites)
+│   ├── hooks/                 – Custom React hooks
+│   ├── pages/                 – Main app pages (e.g., Home, Settings)
+│   ├── services/              – Weather API abstractions
+│   ├── utils/                 – Helper functions
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js               – React entry point
+│   ├── index.css
+│   ├── reportWebVitals.js
+│   └── setupTests.js
 ├── .gitignore
 ├── package.json
-├── README.md
+├── package-lock.json
+└── README.md
 
 ```
-
 ---
 
-## 🚀 Local Setup Guide
+## 🚀 Local Setup
 
 > ⚙️ This serves **frontend and backend** from a single server using Express.
 
