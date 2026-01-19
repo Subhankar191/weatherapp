@@ -1,7 +1,9 @@
 import axios from 'axios';
 import { setupCache } from 'axios-cache-interceptor';
 
-const API_BASE = 'http://localhost:5000/api'; // Your backend proxy URL
+// const API_BASE = 'http://localhost:5000/api'; // Your backend proxy URL
+
+const API_BASE = '/api';
 
 const http = setupCache(axios.create({
   baseURL: API_BASE,
