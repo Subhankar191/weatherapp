@@ -8,7 +8,7 @@ Built with **React.js** on the frontend and **Node.js + Express.js** on the back
 
 ## 🌐 Live Preview
 
-> ⚠️ This app is designed for **local fullstack deployment** (React + Node.js).
+> https://weatherapp-gray-six.vercel.app/
 
 ---
 
