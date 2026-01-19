@@ -6,7 +6,7 @@ require('dotenv').config();
 
 const app = express();
 const PORT = 5000;
-const apiKey = process.env.OPENWEATHER_API_KEY;
+const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
 
 if (!apiKey) {
   console.error("❌ OPENWEATHER_API_KEY is not set in .env");
