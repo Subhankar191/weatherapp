@@ -8,7 +8,7 @@ Built with **React.js** on the frontend and **Node.js + Express.js** on the back
 
 ## 🌐 Live Preview
 
-> https://weatherapp-gray-six.vercel.app/
+> [https://weatherapp-gray-six.vercel.app/](https://weatherapp-git-main-subhankardas8114-7492s-projects.vercel.app/)
 
 ---
 
